@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="models.xml.PriceTable" table="price_table">
+
+        <id name="id" type="long" column="id">
+            <generator class="identity" />
+        </id>
+        
+        <property name="tableName">
+            <column name="table_name"/>
+        </property>
+        
+        <property name="publicationDate">
+            <column name="update_date"/>
+        </property>
+
+        <set name="currencies" table="currency" inverse="false" cascade="all-delete-orphan" lazy="false" fetch="join">
+            <key column="table_id" not-null="true"/>
+            <one-to-many class="models.Currency"/>
+        </set>
+
+    </class>
+</hibernate-mapping>

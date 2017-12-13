@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="models.Currency" table="currency">
+
+        <id name="id" type="long" column="id">
+            <generator class="identity" />
+        </id>
+        
+        <property name="name">
+            <column name="name"/>
+        </property>
+        
+        <property name="converter">
+            <column name="converter"/>
+        </property>
+        
+        <property name="currencyCode">
+            <column name="currency_code"/>
+        </property>
+
+        <set name="avgPrices" table="price" inverse="false" cascade="all-delete-orphan" lazy="false" fetch="join">
+            <key column="currency_id" not-null="true"/>
+            <one-to-many class="models.CurrencyPrice"/>
+        </set>
+
+    </class>
+</hibernate-mapping>
