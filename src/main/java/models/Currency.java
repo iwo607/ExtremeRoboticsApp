@@ -2,13 +2,8 @@ package models;
 
 import common.models.AbstractModel;
 import models.xml.XMLCurrency;
-import org.hibernate.Criteria;
-import org.hibernate.Session;
-import org.hibernate.criterion.Order;
 
-import javax.persistence.EntityManager;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 /**
@@ -39,21 +34,11 @@ public class Currency extends AbstractModel
         setConverter(Double.parseDouble(xmlCurrency.getConverter()));
     }
 
-    //TODO utworzyć repozytorium
-    //TODO zastąpić criteria builderem
-
-    /**
-     * Used to get all currencies from DB
-     * @param em Entity Manager, that will be used to connect to DB
-     * @return list of currencies
-     */
-    @SuppressWarnings("unchecked")
-    public static List<Currency> getAllCurrencies(EntityManager em)
+    public CurrencyPrice getCurrentPrice()
     {
-        Session session = em.unwrap(Session.class);
-        Criteria criteria = session.createCriteria(Currency.class);
-        criteria.addOrder(Order.asc("currencyCode"));
-        return criteria.list();
+        if(avgPrices.size() > 0)
+            return avgPrices.stream().sorted((o1, o2) -> o1.getDate().compareTo(o2.getDate())).findFirst().get();
+        return null;
     }
 
     public Long getId() {

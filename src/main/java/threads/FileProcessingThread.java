@@ -2,8 +2,8 @@ package threads;
 
 import main.Global;
 import models.CurrencyPrice;
-import models.xml.XMLCurrency;
 import models.xml.PriceTable;
+import models.xml.XMLCurrency;
 import org.apache.log4j.Logger;
 import org.joda.time.DateTime;
 import org.joda.time.format.DateTimeFormat;
@@ -158,6 +158,7 @@ public class FileProcessingThread implements Job
             try
             {
                 em.getTransaction().commit();
+                Global.app.connectDataSources();
             }
             catch (RuntimeException e)
             {

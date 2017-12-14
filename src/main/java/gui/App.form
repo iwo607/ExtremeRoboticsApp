@@ -1,11 +1,118 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="gui.App">
-  <grid id="27dc6" binding="mainPanel" layout-manager="BorderLayout" hgap="0" vgap="0">
+  <grid id="27dc6" binding="mainPanel" layout-manager="GridLayoutManager" row-count="1" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+    <margin top="0" left="0" bottom="0" right="0"/>
     <constraints>
-      <xy x="20" y="20" width="500" height="400"/>
+      <xy x="3" y="1" width="800" height="800"/>
     </constraints>
-    <properties/>
+    <properties>
+      <maximumSize width="0" height="0"/>
+      <minimumSize width="800" height="600"/>
+      <preferredSize width="1360" height="768"/>
+      <toolTipText value=""/>
+    </properties>
     <border type="none"/>
-    <children/>
+    <children>
+      <scrollpane id="b9df8">
+        <constraints>
+          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="1" hsize-policy="1" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <horizontalScrollBarPolicy value="31"/>
+        </properties>
+        <border type="none"/>
+        <children>
+          <component id="8eb08" class="javax.swing.JTable" binding="currencyTable">
+            <constraints/>
+            <properties>
+              <autoResizeMode value="4"/>
+              <maximumSize width="350" height="32"/>
+              <preferredScrollableViewportSize width="350" height="600"/>
+              <toolTipText value=""/>
+            </properties>
+          </component>
+        </children>
+      </scrollpane>
+      <grid id="e2f9f" layout-manager="BorderLayout" hgap="0" vgap="0">
+        <constraints>
+          <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties/>
+        <border type="none"/>
+        <children>
+          <toolbar id="35db1">
+            <constraints border-constraint="North"/>
+            <properties/>
+            <border type="none"/>
+            <children>
+              <component id="7d3f8" class="javax.swing.JButton" binding="year5Button">
+                <constraints/>
+                <properties>
+                  <maximumSize width="60" height="32"/>
+                  <minimumSize width="60" height="32"/>
+                  <preferredSize width="60" height="32"/>
+                  <text value="5y"/>
+                  <toolTipText value="5 years period"/>
+                </properties>
+              </component>
+              <component id="bace4" class="javax.swing.JButton" binding="yearButton">
+                <constraints/>
+                <properties>
+                  <maximumSize width="60" height="32"/>
+                  <minimumSize width="60" height="32"/>
+                  <preferredSize width="60" height="32"/>
+                  <text value="1y"/>
+                  <toolTipText value="1 year period"/>
+                </properties>
+              </component>
+              <component id="c50cc" class="javax.swing.JButton" binding="monthButton">
+                <constraints/>
+                <properties>
+                  <maximumSize width="60" height="32"/>
+                  <minimumSize width="60" height="32"/>
+                  <preferredSize width="60" height="32"/>
+                  <text value="month"/>
+                  <toolTipText value="1 month period"/>
+                </properties>
+              </component>
+              <component id="78f16" class="javax.swing.JButton" binding="weekButton">
+                <constraints/>
+                <properties>
+                  <maximumSize width="60" height="32"/>
+                  <minimumSize width="60" height="32"/>
+                  <preferredSize width="60" height="32"/>
+                  <text value="week"/>
+                  <toolTipText value="1 week period"/>
+                </properties>
+              </component>
+              <component id="bf9db" class="javax.swing.JButton" binding="helpButton">
+                <constraints/>
+                <properties>
+                  <horizontalAlignment value="0"/>
+                  <label value="?"/>
+                  <maximumSize width="30" height="32"/>
+                  <minimumSize width="30" height="32"/>
+                  <preferredSize width="30" height="32"/>
+                  <text value="?"/>
+                  <toolTipText value="Help"/>
+                </properties>
+              </component>
+            </children>
+          </toolbar>
+          <component id="256d4" class="org.jfree.chart.ChartPanel" binding="priceHistory" custom-create="true">
+            <constraints border-constraint="Center"/>
+            <properties>
+              <toolTipText value="Select area to zoom in"/>
+            </properties>
+          </component>
+          <component id="123b9" class="org.jfree.chart.ChartPanel" binding="pricePrediction" custom-create="true">
+            <constraints border-constraint="South"/>
+            <properties>
+              <toolTipText value="Select area to zoom in"/>
+            </properties>
+          </component>
+        </children>
+      </grid>
+    </children>
   </grid>
 </form>

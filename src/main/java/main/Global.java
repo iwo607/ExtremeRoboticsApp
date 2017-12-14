@@ -12,7 +12,6 @@ import threads.FileProcessingThread;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
-import javax.swing.*;
 
 /**
  * Created by Iwo Skwierawski on 13.12.17.
@@ -26,6 +25,8 @@ public class Global
 
     public static EntityManager em;
 
+    public static App app;
+
     private static final Logger logger = Logger.getLogger(Global.class);
 
     // TODO FIXME Po przetworzeniu na plik JAR nie działa builder z intellijIDEA, trzeba ręcznie pododawać wszystkie elementy GUI przez kod.
@@ -35,11 +36,7 @@ public class Global
         em = emf.createEntityManager();
         currencyService = new CurrencyServiceImpl(em);
         BasicConfigurator.configure();
-        JFrame frame = new JFrame("App");
-        frame.setContentPane(new App().mainPanel);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.pack();
-        frame.setVisible(true);
+        app = new App();
         scheduleTasks();
     }
 
