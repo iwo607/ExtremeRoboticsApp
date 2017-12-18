@@ -29,11 +29,13 @@ public class CurrencyServiceImpl implements CurrencyService
         priceRepo.setEm(em);
     }
 
+    @Override
     public List<PriceTable> getAllTables()
     {
         return tableReo.findAll();
     }
 
+    @Override
     public List<Currency> getAllCurrencies()
     {
         return currencyRepo.findAll();

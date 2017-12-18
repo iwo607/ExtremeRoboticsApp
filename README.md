@@ -1,4 +1,4 @@
-This desktop java application is designed to download everyday current price for each currency from [http://www.nbp.pl](trusted source).
+This desktop java application is designed to download everyday current price for each currency from [http://www.nbp.pl](trusted) source.
 With enough data it may predict currency market fluctuation.
 
 Project structure:

@@ -1,9 +1,12 @@
 package threads;
 
 import main.Global;
+import models.Currency;
 import models.CurrencyPrice;
 import models.xml.PriceTable;
 import models.xml.XMLCurrency;
+import org.apache.commons.csv.CSVFormat;
+import org.apache.commons.csv.CSVRecord;
 import org.apache.log4j.Logger;
 import org.joda.time.DateTime;
 import org.joda.time.format.DateTimeFormat;
@@ -38,6 +41,7 @@ public class FileProcessingThread implements Job
     /**
      * This method is executed each minute to check if there are new files to process.
      * If there are, it converts them to objects and saves to DB, then deleting outdated files.
+     * Process downloaded archive file if this is first run and there are no entries in DB
      */
     private static void processDownloadedFiles()
     {
@@ -50,8 +54,29 @@ public class FileProcessingThread implements Job
             tables.put(table.getTableName(), table);
             table.getCurrencies().stream().forEach(currency -> currencyMap.put(currency.getCurrencyCode(), currency));
         });
-        DateTimeFormatter formatter = DateTimeFormat.forPattern("yyyy-MM-dd");
         EntityManager em = Global.em;
+        if(tables.size() == 0)
+        {
+            em.getTransaction().begin();
+            File archive = new File("files/import/ArchiveA-"+DateTime.now().getYear()+".csv");
+            if(archive.exists())
+            {
+                PriceTable tableA = new PriceTable();
+                tableA.setTableName("A");
+                processArchiveFile(archive, tableA).save(em);
+            }
+            archive = new File("files/import/ArchiveB-"+DateTime.now().getYear()+".csv");
+            if(archive.exists())
+            {
+                PriceTable tableB = new PriceTable();
+                tableB.setTableName("B");
+                processArchiveFile(archive, tableB).save(em);
+            }
+            em.getTransaction().commit();
+            Global.app.connectDataSources();
+            return;
+        }
+        DateTimeFormatter formatter = DateTimeFormat.forPattern("yyyy-MM-dd");
         try
         {
             InputStream inputStream = new FileInputStream("files/import/LastA.xml");
@@ -166,5 +191,86 @@ public class FileProcessingThread implements Job
             }
             logger.info("Saved new prices to DB.");
         }
+    }
+
+    private static PriceTable processArchiveFile(File archive, PriceTable table)
+    {
+        try
+        {
+            InputStream inputStream = new FileInputStream(archive);
+            Reader in = new InputStreamReader(inputStream, "ISO-8859-2");
+            Iterable<CSVRecord> records = CSVFormat.DEFAULT.withDelimiter(';').parse(in);
+            int i = 0;
+            Map<Integer, Currency> csvCurrencyMap = new HashMap<>();                                                    // Map containing currency and corresponding column in csv file
+            DateTimeFormatter formatter = DateTimeFormat.forPattern("yyyyMMdd");
+
+
+            for(CSVRecord record : records)
+            {
+                int j;
+                if(i == 0)                                                                                              // First line is a header containing converter and currency code
+                {
+                    j = 1;
+                    while(j < record.size() - 3)
+                    {
+                        String currencyString = record.get(j);
+                        if(currencyString == null || currencyString.isEmpty())
+                            break;
+
+                        String[] splittedString = currencyString.split("(?<=\\D)(?=\\d)|(?<=\\d)(?=\\D)");
+                        Currency newCurrency = new Currency();
+                        newCurrency.setConverter(Double.parseDouble(splittedString[0]));
+                        newCurrency.setCurrencyCode(splittedString[1]);
+                        table.getCurrencies().add(newCurrency);
+                        csvCurrencyMap.put(j, newCurrency);
+                        j++;
+                    }
+                }
+                else if(i == 1)                                                                                         // Second line is a header containing currency name
+                {
+                    j = 1;
+                    while(true)
+                    {
+                        String currencyName = record.get(j);
+                        if(currencyName == null || currencyName.isEmpty())
+                            break;
+                        Currency matchedCurrency = csvCurrencyMap.get(j);
+                        matchedCurrency.setName(currencyName);
+                        j++;
+                    }
+                }
+                else
+                {
+                    if(!record.get(0).startsWith(""+DateTime.now().getYear()))                                          // It means we reached document's footer
+                        break;
+                    j = 1;
+                    DateTime publicationDate = formatter.parseDateTime(record.get(0));
+                    String plainDate = publicationDate.getYear() + "-" + publicationDate.getMonthOfYear() + "-" + publicationDate.getDayOfMonth();
+                    table.setPublicationDate(plainDate);
+                    while(j < record.size() - 3)
+                    {
+                        String currencyPriceString = record.get(j);
+                        if(currencyPriceString == null || currencyPriceString.isEmpty())
+                            break;
+                        Currency matchedCurrency = csvCurrencyMap.get(j);
+                        CurrencyPrice currencyPrice = new CurrencyPrice(currencyPriceString);
+                        currencyPrice.setDate(publicationDate);
+                        matchedCurrency.getAvgPrices().add(currencyPrice);
+                        j++;
+                    }
+
+                }
+                i++;
+            }
+        }
+        catch (FileNotFoundException e)
+        {
+            logger.error("File not found!", e);
+        }
+        catch (IOException e)
+        {
+            logger.error("Error while processing archive file!", e);
+        }
+        return table;
     }
 }
