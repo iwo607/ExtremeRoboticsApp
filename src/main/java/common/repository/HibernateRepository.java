@@ -77,6 +77,17 @@ public class HibernateRepository<T extends AbstractModel> implements Repository<
     }
 
     @Override
+    @SuppressWarnings("unchecked")
+    public List<T> findAllOrdered(Order order, String... aliases)
+    {
+        Criteria criteria = getCriteria();
+        criteria.setResultTransformer(CriteriaSpecification.DISTINCT_ROOT_ENTITY);
+        addAliases(criteria, aliases);
+        criteria.addOrder(order);
+        return criteria.list();
+    }
+
+    @Override
     public List<T> findWithRestrictions(List<?> restrictions, String... aliases) {
         Map<String, JoinType> map = new HashMap<>();
         Stream.of(aliases).forEach(alias -> map.put(alias, JoinType.LEFT_OUTER_JOIN));

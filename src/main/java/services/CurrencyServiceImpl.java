@@ -5,6 +5,7 @@ import common.repository.Repository;
 import models.Currency;
 import models.CurrencyPrice;
 import models.xml.PriceTable;
+import org.hibernate.criterion.Order;
 
 import javax.persistence.EntityManager;
 import java.util.List;
@@ -38,6 +39,6 @@ public class CurrencyServiceImpl implements CurrencyService
     @Override
     public List<Currency> getAllCurrencies()
     {
-        return currencyRepo.findAll();
+        return currencyRepo.findAllOrdered(Order.asc("name"));
     }
 }

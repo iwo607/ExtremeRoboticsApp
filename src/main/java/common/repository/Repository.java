@@ -4,6 +4,7 @@ import common.models.AbstractModel;
 import org.hibernate.Criteria;
 import org.hibernate.criterion.Criterion;
 import org.hibernate.criterion.DetachedCriteria;
+import org.hibernate.criterion.Order;
 import org.hibernate.sql.JoinType;
 
 import javax.persistence.EntityManager;
@@ -92,6 +93,8 @@ public interface Repository<T extends AbstractModel>
      */
     List<T> findAll(String... aliases);
     List<T> findAll(Map<String, JoinType> aliases);
+
+    List<T> findAllOrdered(Order order, String... aliases);
 
     /**
      * Checks if object containing exact field value is already present in DB

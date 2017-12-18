@@ -193,12 +193,18 @@ public class FileProcessingThread implements Job
         }
     }
 
+    /**
+     * Executed after first run of program, fills DB with archived data from the past.
+     * @param archive archive file in .csv format, downloaded from npb.pl
+     * @param table table to which newly created data will be saved.
+     * @return table filled with data, ready to be saved.
+     */
     private static PriceTable processArchiveFile(File archive, PriceTable table)
     {
         try
         {
             InputStream inputStream = new FileInputStream(archive);
-            Reader in = new InputStreamReader(inputStream, "ISO-8859-2");
+            Reader in = new InputStreamReader(inputStream, "Windows-1250");
             Iterable<CSVRecord> records = CSVFormat.DEFAULT.withDelimiter(';').parse(in);
             int i = 0;
             Map<Integer, Currency> csvCurrencyMap = new HashMap<>();                                                    // Map containing currency and corresponding column in csv file

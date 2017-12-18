@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="gui.App">
-  <grid id="27dc6" binding="mainPanel" layout-manager="GridLayoutManager" row-count="1" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
-    <margin top="0" left="0" bottom="0" right="0"/>
+  <grid id="27dc6" binding="mainPanel" layout-manager="BorderLayout" hgap="0" vgap="0">
     <constraints>
       <xy x="3" y="1" width="800" height="800"/>
     </constraints>
@@ -13,30 +12,53 @@
     </properties>
     <border type="none"/>
     <children>
-      <scrollpane id="b9df8">
-        <constraints>
-          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="1" hsize-policy="1" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <horizontalScrollBarPolicy value="31"/>
-        </properties>
+      <grid id="189dc" layout-manager="BorderLayout" hgap="0" vgap="0">
+        <constraints border-constraint="West"/>
+        <properties/>
         <border type="none"/>
         <children>
-          <component id="8eb08" class="javax.swing.JTable" binding="currencyTable">
-            <constraints/>
+          <toolbar id="d3e18">
+            <constraints border-constraint="North"/>
+            <properties/>
+            <border type="none"/>
+            <children>
+              <component id="9f16" class="javax.swing.JButton" binding="buttonAdd">
+                <constraints/>
+                <properties>
+                  <text value="Add Graph"/>
+                </properties>
+              </component>
+              <component id="70e34" class="javax.swing.JButton" binding="buttonRemove">
+                <constraints/>
+                <properties>
+                  <text value="Remove Graph"/>
+                </properties>
+              </component>
+            </children>
+          </toolbar>
+          <scrollpane id="b9df8">
+            <constraints border-constraint="West"/>
             <properties>
-              <autoResizeMode value="4"/>
-              <maximumSize width="350" height="32"/>
-              <preferredScrollableViewportSize width="350" height="600"/>
-              <toolTipText value=""/>
+              <horizontalScrollBarPolicy value="31"/>
+              <preferredSize width="400" height="600"/>
             </properties>
-          </component>
+            <border type="none"/>
+            <children>
+              <component id="8eb08" class="javax.swing.JTable" binding="currencyTable">
+                <constraints/>
+                <properties>
+                  <autoResizeMode value="4"/>
+                  <maximumSize width="400" height="600"/>
+                  <preferredScrollableViewportSize width="400" height="600"/>
+                  <toolTipText value=""/>
+                </properties>
+              </component>
+            </children>
+          </scrollpane>
         </children>
-      </scrollpane>
+      </grid>
       <grid id="e2f9f" layout-manager="BorderLayout" hgap="0" vgap="0">
-        <constraints>
-          <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
-        </constraints>
+        <constraints border-constraint="Center"/>
         <properties/>
         <border type="none"/>
         <children>
@@ -99,18 +121,24 @@
               </component>
             </children>
           </toolbar>
-          <component id="256d4" class="org.jfree.chart.ChartPanel" binding="priceHistory" custom-create="true">
+          <scrollpane id="d9f07">
             <constraints border-constraint="Center"/>
             <properties>
-              <toolTipText value="Select area to zoom in"/>
+              <autoscrolls value="true"/>
+              <horizontalScrollBarPolicy value="30"/>
             </properties>
-          </component>
-          <component id="123b9" class="org.jfree.chart.ChartPanel" binding="pricePrediction" custom-create="true">
-            <constraints border-constraint="South"/>
-            <properties>
-              <toolTipText value="Select area to zoom in"/>
-            </properties>
-          </component>
+            <border type="none"/>
+            <children>
+              <grid id="c5a90" binding="chartPanel" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="0">
+                <constraints/>
+                <properties>
+                  <autoscrolls value="true"/>
+                </properties>
+                <border type="none"/>
+                <children/>
+              </grid>
+            </children>
+          </scrollpane>
         </children>
       </grid>
     </children>

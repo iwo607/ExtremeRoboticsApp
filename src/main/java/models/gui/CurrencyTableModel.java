@@ -4,6 +4,7 @@ import models.Currency;
 
 import javax.swing.event.TableModelListener;
 import javax.swing.table.TableModel;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -57,8 +58,18 @@ public class CurrencyTableModel implements TableModel
         if(columnIndex == 0)
             return data.get(rowIndex).getName();
         if(columnIndex == 1)
-            return data.get(rowIndex).getCurrentPrice().getPrice();
+        {
+            DecimalFormat format = new DecimalFormat();
+            format.setMinimumFractionDigits(2);
+            return format.format(data.get(rowIndex).getCurrentPrice().getPrice());
+        }
+
         return null;
+    }
+
+    public Currency getObjectAt(int rowIndex)
+    {
+        return data.get(rowIndex);
     }
 
     @Override
