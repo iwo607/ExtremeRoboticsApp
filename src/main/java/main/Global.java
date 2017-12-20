@@ -29,7 +29,6 @@ public class Global
 
     private static final Logger logger = Logger.getLogger(Global.class);
 
-    // TODO FIXME Po przetworzeniu na plik JAR nie działa builder z intellijIDEA, trzeba ręcznie pododawać wszystkie elementy GUI przez kod.
     public static void main(String[] args)
     {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("defaultPersistenceUnit");

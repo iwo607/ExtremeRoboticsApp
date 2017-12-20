@@ -1,0 +1,689 @@
+<?xml version="1.0" encoding="ISO-8859-2"?>
+<tabela_kursow typ="B" uid="17b051">
+   <numer_tabeli>051/B/NBP/2017</numer_tabeli>
+   <data_publikacji>2017-12-20</data_publikacji>
+   <pozycja>
+      <nazwa_waluty>afgani (Afganistan)</nazwa_waluty>
+      <przelicznik>100</przelicznik>
+      <kod_waluty>AFN</kod_waluty>
+      <kurs_sredni>5,0922</kurs_sredni>
+   </pozycja>
+   <pozycja>
+      <nazwa_waluty>ariary (Madagaskar)</nazwa_waluty>
+      <przelicznik>100</przelicznik>
+      <kod_waluty>MGA</kod_waluty>
+      <kurs_sredni>0,1093</kurs_sredni>
+   </pozycja>
+   <pozycja>
+      <nazwa_waluty>balboa (Panama)</nazwa_waluty>
+      <przelicznik>1</przelicznik>
+      <kod_waluty>PAB</kod_waluty>
+      <kurs_sredni>3,5459</kurs_sredni>
+   </pozycja>
+   <pozycja>
+      <nazwa_waluty>birr etiopski</nazwa_waluty>
+      <przelicznik>1</przelicznik>
+      <kod_waluty>ETB</kod_waluty>
+      <kurs_sredni>0,1293</kurs_sredni>
+   </pozycja>
+   <pozycja>
+      <nazwa_waluty>bolivar (Wenezuela)</nazwa_waluty>
+      <przelicznik>1</przelicznik>
+      <kod_waluty>VEF</kod_waluty>
+      <kurs_sredni>0,3547</kurs_sredni>
+   </pozycja>
+   <pozycja>
+      <nazwa_waluty>boliwiano (Boliwia)</nazwa_waluty>
+      <przelicznik>1</przelicznik>
+      <kod_waluty>BOB</kod_waluty>
+      <kurs_sredni>0,5109</kurs_sredni>
+   </pozycja>
+   <pozycja>
+      <nazwa_waluty>colon kostarykański</nazwa_waluty>
+      <przelicznik>100</przelicznik>
+      <kod_waluty>CRC</kod_waluty>
+      <kurs_sredni>0,6265</kurs_sredni>
+   </pozycja>
+   <pozycja>
+      <nazwa_waluty>colon salwadorski</nazwa_waluty>
+      <przelicznik>1</przelicznik>
+      <kod_waluty>SVC</kod_waluty>
+      <kurs_sredni>0,4060</kurs_sredni>
+   </pozycja>
+   <pozycja>
+      <nazwa_waluty>cordoba oro (Nikaragua)</nazwa_waluty>
+      <przelicznik>1</przelicznik>
+      <kod_waluty>NIO</kod_waluty>
+      <kurs_sredni>0,1150</kurs_sredni>
+   </pozycja>
+   <pozycja>
+      <nazwa_waluty>dalasi (Gambia)</nazwa_waluty>
+      <przelicznik>1</przelicznik>
+      <kod_waluty>GMD</kod_waluty>
+      <kurs_sredni>0,0739</kurs_sredni>
+   </pozycja>
+   <pozycja>
+      <nazwa_waluty>denar (Macedonia)</nazwa_waluty>
+      <przelicznik>100</przelicznik>
+      <kod_waluty>MKD</kod_waluty>
+      <kurs_sredni>6,8246</kurs_sredni>
+   </pozycja>
+   <pozycja>
+      <nazwa_waluty>dinar algierski</nazwa_waluty>
+      <przelicznik>100</przelicznik>
+      <kod_waluty>DZD</kod_waluty>
+      <kurs_sredni>3,0676</kurs_sredni>
+   </pozycja>
+   <pozycja>
+      <nazwa_waluty>dinar bahrajski</nazwa_waluty>
+      <przelicznik>1</przelicznik>
+      <kod_waluty>BHD</kod_waluty>
+      <kurs_sredni>9,4720</kurs_sredni>
+   </pozycja>
+   <pozycja>
+      <nazwa_waluty>dinar iracki</nazwa_waluty>
+      <przelicznik>100</przelicznik>
+      <kod_waluty>IQD</kod_waluty>
+      <kurs_sredni>0,2972</kurs_sredni>
+   </pozycja>
+   <pozycja>
+      <nazwa_waluty>dinar jordański</nazwa_waluty>
+      <przelicznik>1</przelicznik>
+      <kod_waluty>JOD</kod_waluty>
+      <kurs_sredni>4,9970</kurs_sredni>
+   </pozycja>
+   <pozycja>
+      <nazwa_waluty>dinar kuwejcki</nazwa_waluty>
+      <przelicznik>1</przelicznik>
+      <kod_waluty>KWD</kod_waluty>
+      <kurs_sredni>11,8239</kurs_sredni>
+   </pozycja>
+   <pozycja>
+      <nazwa_waluty>dinar libijski</nazwa_waluty>
+      <przelicznik>1</przelicznik>
+      <kod_waluty>LYD</kod_waluty>
+      <kurs_sredni>2,5908</kurs_sredni>
+   </pozycja>
+   <pozycja>
+      <nazwa_waluty>dinar serbski</nazwa_waluty>
+      <przelicznik>1</przelicznik>
+      <kod_waluty>RSD</kod_waluty>
+      <kurs_sredni>0,0352</kurs_sredni>
+   </pozycja>
+   <pozycja>
+      <nazwa_waluty>dinar tunezyjski</nazwa_waluty>
+      <przelicznik>1</przelicznik>
+      <kod_waluty>TND</kod_waluty>
+      <kurs_sredni>1,4314</kurs_sredni>
+   </pozycja>
+   <pozycja>
+      <nazwa_waluty>dirham marokański</nazwa_waluty>
+      <przelicznik>1</przelicznik>
+      <kod_waluty>MAD</kod_waluty>
+      <kurs_sredni>0,3759</kurs_sredni>
+   </pozycja>
+   <pozycja>
+      <nazwa_waluty>dirham ZEA (Zjednoczone Emiraty Arabskie)</nazwa_waluty>
+      <przelicznik>1</przelicznik>
+      <kod_waluty>AED</kod_waluty>
+      <kurs_sredni>0,9644</kurs_sredni>
+   </pozycja>
+   <pozycja>
+      <nazwa_waluty>dobra (Wyspy Świętego Tomasza i Książęca)</nazwa_waluty>
+      <przelicznik>10000</przelicznik>
+      <kod_waluty>STD</kod_waluty>
+      <kurs_sredni>1,7081</kurs_sredni>
+   </pozycja>
+   <pozycja>
+      <nazwa_waluty>dolar bahamski</nazwa_waluty>
+      <przelicznik>1</przelicznik>
+      <kod_waluty>BSD</kod_waluty>
+      <kurs_sredni>3,5459</kurs_sredni>
+   </pozycja>
+   <pozycja>
+      <nazwa_waluty>dolar barbadoski</nazwa_waluty>
+      <przelicznik>1</przelicznik>
+      <kod_waluty>BBD</kod_waluty>
+      <kurs_sredni>1,7701</kurs_sredni>
+   </pozycja>
+   <pozycja>
+      <nazwa_waluty>dolar belizeński</nazwa_waluty>
+      <przelicznik>1</przelicznik>
+      <kod_waluty>BZD</kod_waluty>
+      <kurs_sredni>1,7627</kurs_sredni>
+   </pozycja>
+   <pozycja>
+      <nazwa_waluty>dolar brunejski</nazwa_waluty>
+      <przelicznik>1</przelicznik>
+      <kod_waluty>BND</kod_waluty>
+      <kurs_sredni>2,6330</kurs_sredni>
+   </pozycja>
+   <pozycja>
+      <nazwa_waluty>dolar Fidżi</nazwa_waluty>
+      <przelicznik>1</przelicznik>
+      <kod_waluty>FJD</kod_waluty>
+      <kurs_sredni>1,6959</kurs_sredni>
+   </pozycja>
+   <pozycja>
+      <nazwa_waluty>dolar gujański</nazwa_waluty>
+      <przelicznik>100</przelicznik>
+      <kod_waluty>GYD</kod_waluty>
+      <kurs_sredni>1,7077</kurs_sredni>
+   </pozycja>
+   <pozycja>
+      <nazwa_waluty>dolar jamajski</nazwa_waluty>
+      <przelicznik>1</przelicznik>
+      <kod_waluty>JMD</kod_waluty>
+      <kurs_sredni>0,0284</kurs_sredni>
+   </pozycja>
+   <pozycja>
+      <nazwa_waluty>dolar liberyjski</nazwa_waluty>
+      <przelicznik>1</przelicznik>
+      <kod_waluty>LRD</kod_waluty>
+      <kurs_sredni>0,0280</kurs_sredni>
+   </pozycja>
+   <pozycja>
+      <nazwa_waluty>dolar namibijski</nazwa_waluty>
+      <przelicznik>1</przelicznik>
+      <kod_waluty>NAD</kod_waluty>
+      <kurs_sredni>0,2784</kurs_sredni>
+   </pozycja>
+   <pozycja>
+      <nazwa_waluty>dolar surinamski</nazwa_waluty>
+      <przelicznik>1</przelicznik>
+      <kod_waluty>SRD</kod_waluty>
+      <kurs_sredni>0,4743</kurs_sredni>
+   </pozycja>
+   <pozycja>
+      <nazwa_waluty>dolar Trynidadu i Tobago</nazwa_waluty>
+      <przelicznik>1</przelicznik>
+      <kod_waluty>TTD</kod_waluty>
+      <kurs_sredni>0,5264</kurs_sredni>
+   </pozycja>
+   <pozycja>
+      <nazwa_waluty>dolar wschodniokaraibski</nazwa_waluty>
+      <przelicznik>1</przelicznik>
+      <kod_waluty>XCD</kod_waluty>
+      <kurs_sredni>1,3076</kurs_sredni>
+   </pozycja>
+   <pozycja>
+      <nazwa_waluty>dolar Wysp Salomona</nazwa_waluty>
+      <przelicznik>1</przelicznik>
+      <kod_waluty>SBD</kod_waluty>
+      <kurs_sredni>0,4555</kurs_sredni>
+   </pozycja>
+   <pozycja>
+      <nazwa_waluty>dong (Wietnam)</nazwa_waluty>
+      <przelicznik>10000</przelicznik>
+      <kod_waluty>VND</kod_waluty>
+      <kurs_sredni>1,5605</kurs_sredni>
+   </pozycja>
+   <pozycja>
+      <nazwa_waluty>dram (Armenia)</nazwa_waluty>
+      <przelicznik>100</przelicznik>
+      <kod_waluty>AMD</kod_waluty>
+      <kurs_sredni>0,7351</kurs_sredni>
+   </pozycja>
+   <pozycja>
+      <nazwa_waluty>escudo Republiki Zielonego Przylądka</nazwa_waluty>
+      <przelicznik>1</przelicznik>
+      <kod_waluty>CVE</kod_waluty>
+      <kurs_sredni>0,0378</kurs_sredni>
+   </pozycja>
+   <pozycja>
+      <nazwa_waluty>florin arubański</nazwa_waluty>
+      <przelicznik>1</przelicznik>
+      <kod_waluty>AWG</kod_waluty>
+      <kurs_sredni>1,9846</kurs_sredni>
+   </pozycja>
+   <pozycja>
+      <nazwa_waluty>frank burundyjski</nazwa_waluty>
+      <przelicznik>100</przelicznik>
+      <kod_waluty>BIF</kod_waluty>
+      <kurs_sredni>0,2017</kurs_sredni>
+   </pozycja>
+   <pozycja>
+      <nazwa_waluty>frank CFA BCEAO</nazwa_waluty>
+      <przelicznik>100</przelicznik>
+      <kod_waluty>XOF</kod_waluty>
+      <kurs_sredni>0,6360</kurs_sredni>
+   </pozycja>
+   <pozycja>
+      <nazwa_waluty>frank CFA BEAC</nazwa_waluty>
+      <przelicznik>100</przelicznik>
+      <kod_waluty>XAF</kod_waluty>
+      <kurs_sredni>0,6360</kurs_sredni>
+   </pozycja>
+   <pozycja>
+      <nazwa_waluty>frank CFP</nazwa_waluty>
+      <przelicznik>100</przelicznik>
+      <kod_waluty>XPF</kod_waluty>
+      <kurs_sredni>3,5176</kurs_sredni>
+   </pozycja>
+   <pozycja>
+      <nazwa_waluty>frank Dżibuti</nazwa_waluty>
+      <przelicznik>100</przelicznik>
+      <kod_waluty>DJF</kod_waluty>
+      <kurs_sredni>2,0023</kurs_sredni>
+   </pozycja>
+   <pozycja>
+      <nazwa_waluty>frank gwinejski</nazwa_waluty>
+      <przelicznik>100</przelicznik>
+      <kod_waluty>GNF</kod_waluty>
+      <kurs_sredni>0,0392</kurs_sredni>
+   </pozycja>
+   <pozycja>
+      <nazwa_waluty>frank Komorów</nazwa_waluty>
+      <przelicznik>100</przelicznik>
+      <kod_waluty>KMF</kod_waluty>
+      <kurs_sredni>0,8610</kurs_sredni>
+   </pozycja>
+   <pozycja>
+      <nazwa_waluty>frank kongijski (Dem. Republika Konga)</nazwa_waluty>
+      <przelicznik>100</przelicznik>
+      <kod_waluty>CDF</kod_waluty>
+      <kurs_sredni>0,2256</kurs_sredni>
+   </pozycja>
+   <pozycja>
+      <nazwa_waluty>frank rwandyjski</nazwa_waluty>
+      <przelicznik>100</przelicznik>
+      <kod_waluty>RWF</kod_waluty>
+      <kurs_sredni>0,4127</kurs_sredni>
+   </pozycja>
+   <pozycja>
+      <nazwa_waluty>funt egipski</nazwa_waluty>
+      <przelicznik>1</przelicznik>
+      <kod_waluty>EGP</kod_waluty>
+      <kurs_sredni>0,1990</kurs_sredni>
+   </pozycja>
+   <pozycja>
+      <nazwa_waluty>funt gibraltarski</nazwa_waluty>
+      <przelicznik>1</przelicznik>
+      <kod_waluty>GIP</kod_waluty>
+      <kurs_sredni>4,7483</kurs_sredni>
+   </pozycja>
+   <pozycja>
+      <nazwa_waluty>funt libański</nazwa_waluty>
+      <przelicznik>100</przelicznik>
+      <kod_waluty>LBP</kod_waluty>
+      <kurs_sredni>0,2337</kurs_sredni>
+   </pozycja>
+   <pozycja>
+      <nazwa_waluty>funt południowosudański</nazwa_waluty>
+      <przelicznik>100</przelicznik>
+      <kod_waluty>SSP</kod_waluty>
+      <kurs_sredni>2,7196</kurs_sredni>
+   </pozycja>
+   <pozycja>
+      <nazwa_waluty>funt sudański</nazwa_waluty>
+      <przelicznik>1</przelicznik>
+      <kod_waluty>SDG</kod_waluty>
+      <kurs_sredni>0,5051</kurs_sredni>
+   </pozycja>
+   <pozycja>
+      <nazwa_waluty>funt syryjski</nazwa_waluty>
+      <przelicznik>1</przelicznik>
+      <kod_waluty>SYP</kod_waluty>
+      <kurs_sredni>0,0069</kurs_sredni>
+   </pozycja>
+   <pozycja>
+      <nazwa_waluty>Ghana cedi</nazwa_waluty>
+      <przelicznik>1</przelicznik>
+      <kod_waluty>GHS</kod_waluty>
+      <kurs_sredni>0,7866</kurs_sredni>
+   </pozycja>
+   <pozycja>
+      <nazwa_waluty>gourde (Haiti)</nazwa_waluty>
+      <przelicznik>1</przelicznik>
+      <kod_waluty>HTG</kod_waluty>
+      <kurs_sredni>0,0552</kurs_sredni>
+   </pozycja>
+   <pozycja>
+      <nazwa_waluty>guarani (Paragwaj)</nazwa_waluty>
+      <przelicznik>100</przelicznik>
+      <kod_waluty>PYG</kod_waluty>
+      <kurs_sredni>0,0626</kurs_sredni>
+   </pozycja>
+   <pozycja>
+      <nazwa_waluty>gulden Antyli Holenderskich</nazwa_waluty>
+      <przelicznik>1</przelicznik>
+      <kod_waluty>ANG</kod_waluty>
+      <kurs_sredni>1,9848</kurs_sredni>
+   </pozycja>
+   <pozycja>
+      <nazwa_waluty>kina (Papua-Nowa Gwinea)</nazwa_waluty>
+      <przelicznik>1</przelicznik>
+      <kod_waluty>PGK</kod_waluty>
+      <kurs_sredni>1,1011</kurs_sredni>
+   </pozycja>
+   <pozycja>
+      <nazwa_waluty>kip (Laos)</nazwa_waluty>
+      <przelicznik>100</przelicznik>
+      <kod_waluty>LAK</kod_waluty>
+      <kurs_sredni>0,0426</kurs_sredni>
+   </pozycja>
+   <pozycja>
+      <nazwa_waluty>kwacha malawijska</nazwa_waluty>
+      <przelicznik>100</przelicznik>
+      <kod_waluty>MWK</kod_waluty>
+      <kurs_sredni>0,4883</kurs_sredni>
+   </pozycja>
+   <pozycja>
+      <nazwa_waluty>kwacha zambijska</nazwa_waluty>
+      <przelicznik>1</przelicznik>
+      <kod_waluty>ZMW</kod_waluty>
+      <kurs_sredni>0,3610</kurs_sredni>
+   </pozycja>
+   <pozycja>
+      <nazwa_waluty>kwanza (Angola)</nazwa_waluty>
+      <przelicznik>1</przelicznik>
+      <kod_waluty>AOA</kod_waluty>
+      <kurs_sredni>0,0214</kurs_sredni>
+   </pozycja>
+   <pozycja>
+      <nazwa_waluty>kyat (Myanmar, Birma)</nazwa_waluty>
+      <przelicznik>100</przelicznik>
+      <kod_waluty>MMK</kod_waluty>
+      <kurs_sredni>0,2623</kurs_sredni>
+   </pozycja>
+   <pozycja>
+      <nazwa_waluty>lari (Gruzja)</nazwa_waluty>
+      <przelicznik>1</przelicznik>
+      <kod_waluty>GEL</kod_waluty>
+      <kurs_sredni>1,4060</kurs_sredni>
+   </pozycja>
+   <pozycja>
+      <nazwa_waluty>lej Mołdawii</nazwa_waluty>
+      <przelicznik>1</przelicznik>
+      <kod_waluty>MDL</kod_waluty>
+      <kurs_sredni>0,2061</kurs_sredni>
+   </pozycja>
+   <pozycja>
+      <nazwa_waluty>lek (Albania)</nazwa_waluty>
+      <przelicznik>100</przelicznik>
+      <kod_waluty>ALL</kod_waluty>
+      <kurs_sredni>3,1531</kurs_sredni>
+   </pozycja>
+   <pozycja>
+      <nazwa_waluty>lempira (Honduras)</nazwa_waluty>
+      <przelicznik>1</przelicznik>
+      <kod_waluty>HNL</kod_waluty>
+      <kurs_sredni>0,1499</kurs_sredni>
+   </pozycja>
+   <pozycja>
+      <nazwa_waluty>leone (Sierra Leone)</nazwa_waluty>
+      <przelicznik>100</przelicznik>
+      <kod_waluty>SLL</kod_waluty>
+      <kurs_sredni>0,0462</kurs_sredni>
+   </pozycja>
+   <pozycja>
+      <nazwa_waluty>lilangeni (Suazi)</nazwa_waluty>
+      <przelicznik>1</przelicznik>
+      <kod_waluty>SZL</kod_waluty>
+      <kurs_sredni>0,2784</kurs_sredni>
+   </pozycja>
+   <pozycja>
+      <nazwa_waluty>loti (Lesotho)</nazwa_waluty>
+      <przelicznik>1</przelicznik>
+      <kod_waluty>LSL</kod_waluty>
+      <kurs_sredni>0,2790</kurs_sredni>
+   </pozycja>
+   <pozycja>
+      <nazwa_waluty>manat azerbejdżański</nazwa_waluty>
+      <przelicznik>1</przelicznik>
+      <kod_waluty>AZN</kod_waluty>
+      <kurs_sredni>2,0804</kurs_sredni>
+   </pozycja>
+   <pozycja>
+      <nazwa_waluty>metical (Mozambik)</nazwa_waluty>
+      <przelicznik>1</przelicznik>
+      <kod_waluty>MZN</kod_waluty>
+      <kurs_sredni>0,0600</kurs_sredni>
+   </pozycja>
+   <pozycja>
+      <nazwa_waluty>naira (Nigeria)</nazwa_waluty>
+      <przelicznik>100</przelicznik>
+      <kod_waluty>NGN</kod_waluty>
+      <kurs_sredni>1,1251</kurs_sredni>
+   </pozycja>
+   <pozycja>
+      <nazwa_waluty>nakfa (Erytrea)</nazwa_waluty>
+      <przelicznik>1</przelicznik>
+      <kod_waluty>ERN</kod_waluty>
+      <kurs_sredni>0,2350</kurs_sredni>
+   </pozycja>
+   <pozycja>
+      <nazwa_waluty>nowy dolar tajwański</nazwa_waluty>
+      <przelicznik>1</przelicznik>
+      <kod_waluty>TWD</kod_waluty>
+      <kurs_sredni>0,1183</kurs_sredni>
+   </pozycja>
+   <pozycja>
+      <nazwa_waluty>nowy manat (Turkmenistan)</nazwa_waluty>
+      <przelicznik>1</przelicznik>
+      <kod_waluty>TMT</kod_waluty>
+      <kurs_sredni>1,0139</kurs_sredni>
+   </pozycja>
+   <pozycja>
+      <nazwa_waluty>ouguiya (Mauretania)</nazwa_waluty>
+      <przelicznik>100</przelicznik>
+      <kod_waluty>MRO</kod_waluty>
+      <kurs_sredni>0,9972</kurs_sredni>
+   </pozycja>
+   <pozycja>
+      <nazwa_waluty>pa'anga (Tonga)</nazwa_waluty>
+      <przelicznik>1</przelicznik>
+      <kod_waluty>TOP</kod_waluty>
+      <kurs_sredni>1,6113</kurs_sredni>
+   </pozycja>
+   <pozycja>
+      <nazwa_waluty>pataca (Makau)</nazwa_waluty>
+      <przelicznik>1</przelicznik>
+      <kod_waluty>MOP</kod_waluty>
+      <kurs_sredni>0,4402</kurs_sredni>
+   </pozycja>
+   <pozycja>
+      <nazwa_waluty>peso argentyńskie</nazwa_waluty>
+      <przelicznik>1</przelicznik>
+      <kod_waluty>ARS</kod_waluty>
+      <kurs_sredni>0,2011</kurs_sredni>
+   </pozycja>
+   <pozycja>
+      <nazwa_waluty>peso dominikańskie</nazwa_waluty>
+      <przelicznik>1</przelicznik>
+      <kod_waluty>DOP</kod_waluty>
+      <kurs_sredni>0,0732</kurs_sredni>
+   </pozycja>
+   <pozycja>
+      <nazwa_waluty>peso kolumbijskie</nazwa_waluty>
+      <przelicznik>100</przelicznik>
+      <kod_waluty>COP</kod_waluty>
+      <kurs_sredni>0,1193</kurs_sredni>
+   </pozycja>
+   <pozycja>
+      <nazwa_waluty>peso kubańskie</nazwa_waluty>
+      <przelicznik>1</przelicznik>
+      <kod_waluty>CUP</kod_waluty>
+      <kurs_sredni>3,5459</kurs_sredni>
+   </pozycja>
+   <pozycja>
+      <nazwa_waluty>peso urugwajskie</nazwa_waluty>
+      <przelicznik>1</przelicznik>
+      <kod_waluty>UYU</kod_waluty>
+      <kurs_sredni>0,1232</kurs_sredni>
+   </pozycja>
+   <pozycja>
+      <nazwa_waluty>pula (Botswana)</nazwa_waluty>
+      <przelicznik>1</przelicznik>
+      <kod_waluty>BWP</kod_waluty>
+      <kurs_sredni>0,3539</kurs_sredni>
+   </pozycja>
+   <pozycja>
+      <nazwa_waluty>quetzal (Gwatemala)</nazwa_waluty>
+      <przelicznik>1</przelicznik>
+      <kod_waluty>GTQ</kod_waluty>
+      <kurs_sredni>0,4820</kurs_sredni>
+   </pozycja>
+   <pozycja>
+      <nazwa_waluty>rial irański</nazwa_waluty>
+      <przelicznik>100</przelicznik>
+      <kod_waluty>IRR</kod_waluty>
+      <kurs_sredni>0,0099</kurs_sredni>
+   </pozycja>
+   <pozycja>
+      <nazwa_waluty>rial jemeński</nazwa_waluty>
+      <przelicznik>100</przelicznik>
+      <kod_waluty>YER</kod_waluty>
+      <kurs_sredni>1,4163</kurs_sredni>
+   </pozycja>
+   <pozycja>
+      <nazwa_waluty>rial katarski</nazwa_waluty>
+      <przelicznik>1</przelicznik>
+      <kod_waluty>QAR</kod_waluty>
+      <kurs_sredni>0,9735</kurs_sredni>
+   </pozycja>
+   <pozycja>
+      <nazwa_waluty>rial omański</nazwa_waluty>
+      <przelicznik>1</przelicznik>
+      <kod_waluty>OMR</kod_waluty>
+      <kurs_sredni>9,2182</kurs_sredni>
+   </pozycja>
+   <pozycja>
+      <nazwa_waluty>rial saudyjski</nazwa_waluty>
+      <przelicznik>1</przelicznik>
+      <kod_waluty>SAR</kod_waluty>
+      <kurs_sredni>0,9443</kurs_sredni>
+   </pozycja>
+   <pozycja>
+      <nazwa_waluty>riel (Kambodża)</nazwa_waluty>
+      <przelicznik>100</przelicznik>
+      <kod_waluty>KHR</kod_waluty>
+      <kurs_sredni>0,0874</kurs_sredni>
+   </pozycja>
+   <pozycja>
+      <nazwa_waluty>rubel białoruski</nazwa_waluty>
+      <przelicznik>1</przelicznik>
+      <kod_waluty>BYN</kod_waluty>
+      <kurs_sredni>1,7613</kurs_sredni>
+   </pozycja>
+   <pozycja>
+      <nazwa_waluty>rupia lankijska</nazwa_waluty>
+      <przelicznik>100</przelicznik>
+      <kod_waluty>LKR</kod_waluty>
+      <kurs_sredni>2,3145</kurs_sredni>
+   </pozycja>
+   <pozycja>
+      <nazwa_waluty>rupia (Malediwy)</nazwa_waluty>
+      <przelicznik>1</przelicznik>
+      <kod_waluty>MVR</kod_waluty>
+      <kurs_sredni>0,2292</kurs_sredni>
+   </pozycja>
+   <pozycja>
+      <nazwa_waluty>rupia Mauritiusu</nazwa_waluty>
+      <przelicznik>1</przelicznik>
+      <kod_waluty>MUR</kod_waluty>
+      <kurs_sredni>0,1048</kurs_sredni>
+   </pozycja>
+   <pozycja>
+      <nazwa_waluty>rupia nepalska</nazwa_waluty>
+      <przelicznik>100</przelicznik>
+      <kod_waluty>NPR</kod_waluty>
+      <kurs_sredni>3,4572</kurs_sredni>
+   </pozycja>
+   <pozycja>
+      <nazwa_waluty>rupia pakistańska</nazwa_waluty>
+      <przelicznik>1</przelicznik>
+      <kod_waluty>PKR</kod_waluty>
+      <kurs_sredni>0,0320</kurs_sredni>
+   </pozycja>
+   <pozycja>
+      <nazwa_waluty>rupia seszelska</nazwa_waluty>
+      <przelicznik>1</przelicznik>
+      <kod_waluty>SCR</kod_waluty>
+      <kurs_sredni>0,2641</kurs_sredni>
+   </pozycja>
+   <pozycja>
+      <nazwa_waluty>sol (Peru)</nazwa_waluty>
+      <przelicznik>1</przelicznik>
+      <kod_waluty>PEN</kod_waluty>
+      <kurs_sredni>1,0797</kurs_sredni>
+   </pozycja>
+   <pozycja>
+      <nazwa_waluty>som (Kirgistan)</nazwa_waluty>
+      <przelicznik>1</przelicznik>
+      <kod_waluty>KGS</kod_waluty>
+      <kurs_sredni>0,0510</kurs_sredni>
+   </pozycja>
+   <pozycja>
+      <nazwa_waluty>somoni (Tadżykistan)</nazwa_waluty>
+      <przelicznik>1</przelicznik>
+      <kod_waluty>TJS</kod_waluty>
+      <kurs_sredni>0,4015</kurs_sredni>
+   </pozycja>
+   <pozycja>
+      <nazwa_waluty>sum (Uzbekistan)</nazwa_waluty>
+      <przelicznik>100</przelicznik>
+      <kod_waluty>UZS</kod_waluty>
+      <kurs_sredni>0,0437</kurs_sredni>
+   </pozycja>
+   <pozycja>
+      <nazwa_waluty>szyling kenijski</nazwa_waluty>
+      <przelicznik>100</przelicznik>
+      <kod_waluty>KES</kod_waluty>
+      <kurs_sredni>3,4348</kurs_sredni>
+   </pozycja>
+   <pozycja>
+      <nazwa_waluty>szyling somalijski</nazwa_waluty>
+      <przelicznik>100</przelicznik>
+      <kod_waluty>SOS</kod_waluty>
+      <kurs_sredni>0,6124</kurs_sredni>
+   </pozycja>
+   <pozycja>
+      <nazwa_waluty>szyling tanzański</nazwa_waluty>
+      <przelicznik>100</przelicznik>
+      <kod_waluty>TZS</kod_waluty>
+      <kurs_sredni>0,1582</kurs_sredni>
+   </pozycja>
+   <pozycja>
+      <nazwa_waluty>szyling ugandyjski</nazwa_waluty>
+      <przelicznik>100</przelicznik>
+      <kod_waluty>UGX</kod_waluty>
+      <kurs_sredni>0,0980</kurs_sredni>
+   </pozycja>
+   <pozycja>
+      <nazwa_waluty>taka (Bangladesz)</nazwa_waluty>
+      <przelicznik>100</przelicznik>
+      <kod_waluty>BDT</kod_waluty>
+      <kurs_sredni>4,2868</kurs_sredni>
+   </pozycja>
+   <pozycja>
+      <nazwa_waluty>tala (Samoa)</nazwa_waluty>
+      <przelicznik>1</przelicznik>
+      <kod_waluty>WST</kod_waluty>
+      <kurs_sredni>1,4015</kurs_sredni>
+   </pozycja>
+   <pozycja>
+      <nazwa_waluty>tenge (Kazachstan)</nazwa_waluty>
+      <przelicznik>100</przelicznik>
+      <kod_waluty>KZT</kod_waluty>
+      <kurs_sredni>1,0550</kurs_sredni>
+   </pozycja>
+   <pozycja>
+      <nazwa_waluty>tugrik (Mongolia)</nazwa_waluty>
+      <przelicznik>100</przelicznik>
+      <kod_waluty>MNT</kod_waluty>
+      <kurs_sredni>0,1461</kurs_sredni>
+   </pozycja>
+   <pozycja>
+      <nazwa_waluty>vatu (Vanuatu)</nazwa_waluty>
+      <przelicznik>100</przelicznik>
+      <kod_waluty>VUV</kod_waluty>
+      <kurs_sredni>3,2228</kurs_sredni>
+   </pozycja>
+   <pozycja>
+      <nazwa_waluty>wymienialna marka (Bośnia i Hercegowina)</nazwa_waluty>
+      <przelicznik>1</przelicznik>
+      <kod_waluty>BAM</kod_waluty>
+      <kurs_sredni>2,1461</kurs_sredni>
+   </pozycja>
+</tabela_kursow>

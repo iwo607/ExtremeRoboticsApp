@@ -28,12 +28,6 @@
                   <text value="Add Graph"/>
                 </properties>
               </component>
-              <component id="70e34" class="javax.swing.JButton" binding="buttonRemove">
-                <constraints/>
-                <properties>
-                  <text value="Remove Graph"/>
-                </properties>
-              </component>
             </children>
           </toolbar>
           <scrollpane id="b9df8">
@@ -85,6 +79,15 @@
                   <preferredSize width="60" height="32"/>
                   <text value="1y"/>
                   <toolTipText value="1 year period"/>
+                </properties>
+              </component>
+              <component id="19bcf" class="javax.swing.JButton" binding="month6button">
+                <constraints/>
+                <properties>
+                  <maximumSize width="60" height="32"/>
+                  <minimumSize width="60" height="32"/>
+                  <preferredSize width="60" height="32"/>
+                  <text value="6m"/>
                 </properties>
               </component>
               <component id="c50cc" class="javax.swing.JButton" binding="monthButton">

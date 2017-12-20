@@ -72,6 +72,11 @@ public class CurrencyTableModel implements TableModel
         return data.get(rowIndex);
     }
 
+    public Currency getCurrencyByName(String currencyName)
+    {
+        return data.stream().filter(currency -> currency.getName().equals(currencyName)).findFirst().get();
+    }
+
     @Override
     public void setValueAt(Object aValue, int rowIndex, int columnIndex) {
 

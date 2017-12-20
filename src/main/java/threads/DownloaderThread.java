@@ -35,6 +35,11 @@ public class DownloaderThread implements Job
     private static void downloadFiles()
     {
 
+        if(!new File("files").exists())
+            new File("files").mkdir();
+        if(!new File("files/import").exists())
+            new File("files/import").mkdir();
+
         try
         {
             URL url1 = new URL("http://www.nbp.pl/kursy/xml/LastA.xml");

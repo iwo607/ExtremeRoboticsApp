@@ -3,11 +3,10 @@
 .idea_modules/
 .settings/
 projectFilesBackup**/
-Extreme Robotics App.iml
+extreme-app.iml
 
 #COMPILATION
 target/
 
 #PROJECT
 logs/
-files/

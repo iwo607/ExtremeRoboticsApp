@@ -1,6 +1,5 @@
 package models.xml;
 
-import com.sun.istack.internal.NotNull;
 import common.models.AbstractModel;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
@@ -33,14 +32,14 @@ public class PriceTable extends AbstractModel
      * @return list of price tables
      */
     @SuppressWarnings("unchecked")
-    public static List<PriceTable> getAllTables(@NotNull EntityManager em)
+    public static List<PriceTable> getAllTables(EntityManager em)
     {
         Session session = em.unwrap(Session.class);
         Criteria criteria = session.createCriteria(PriceTable.class);
         return criteria.list();
     }
 
-    public Optional<models.Currency> getCurrencyByName(@NotNull String name)
+    public Optional<models.Currency> getCurrencyByName(String name)
     {
         return currencies.stream().filter(currency -> currency.getName().equals(name)).findFirst();
     }
