@@ -10,12 +10,10 @@ import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartPanel;
 import org.jfree.chart.ChartUtilities;
 import org.jfree.chart.JFreeChart;
-import org.jfree.chart.axis.NumberAxis;
 import org.jfree.chart.labels.StandardXYToolTipGenerator;
 import org.jfree.chart.plot.XYPlot;
 import org.jfree.chart.renderer.xy.StandardXYBarPainter;
 import org.jfree.chart.renderer.xy.XYBarRenderer;
-import org.jfree.chart.renderer.xy.XYItemRenderer;
 import org.jfree.data.time.Day;
 import org.jfree.data.time.TimeSeries;
 import org.jfree.data.time.TimeSeriesCollection;
@@ -90,33 +88,19 @@ public class App
      */
     private static JFreeChart createChart(String title, List<CurrencyPrice> prices) {
 
-        XYDataset priceData = createTrendLine(prices);
         JFreeChart chart = ChartFactory.createTimeSeriesChart(
                 title,
                 "Date",
                 "Price",
-                priceData,
+                createTrendLine(prices),
                 true,
                 true,
                 false
         );
         XYPlot plot = (XYPlot) chart.getPlot();
-        NumberAxis rangeAxis1 = (NumberAxis) plot.getRangeAxis();
-        rangeAxis1.setLowerMargin(0.40);  // to leave room for volume bars
-        DecimalFormat format = new DecimalFormat("00.00");
-        rangeAxis1.setNumberFormatOverride(format);
 
-        XYItemRenderer renderer1 = plot.getRenderer();
-        renderer1.setBaseToolTipGenerator(new StandardXYToolTipGenerator(
-                StandardXYToolTipGenerator.DEFAULT_TOOL_TIP_FORMAT,
-                new SimpleDateFormat("d-MMM-yyyy"), new DecimalFormat("0.00")));
-
-        NumberAxis rangeAxis2 = new NumberAxis("Price");
-        rangeAxis2.setUpperMargin(1.00);  // to leave room for price line
-        plot.setRangeAxis(1, rangeAxis2);
         plot.setDataset(1, createPriceDataSet(prices));
-        plot.setRangeAxis(1, rangeAxis2);
-        plot.mapDatasetToRangeAxis(1, 1);
+        plot.mapDatasetToRangeAxis(1, 0);
         XYBarRenderer renderer2 = new XYBarRenderer(0.20);
         renderer2.setBaseToolTipGenerator(
                 new StandardXYToolTipGenerator(
