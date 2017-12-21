@@ -49,7 +49,7 @@ public class Global
     }
 
     /**
-     * Schedules to download currencies prices from nbp.pl at 01:00AM, once a day.
+     * Schedules to download currencies prices from nbp.pl at 4:00PM, once a day.
      */
     private static void scheduleDownload()
     {
@@ -61,7 +61,7 @@ public class Global
             JobDetail download = JobBuilder.newJob(DownloaderThread.class).withIdentity("downloader", "fileProcess").build();
             Trigger downloadTrigger = TriggerBuilder.newTrigger()
                     .withIdentity("downloadTrigger", "fileProcess")
-                    .withSchedule(CronScheduleBuilder.cronSchedule("0 * * ? * MON-FRI *"))
+                    .withSchedule(CronScheduleBuilder.cronSchedule("0 0 16 ? * MON-FRI *"))
                     .build();
             scheduler.scheduleJob(download, downloadTrigger);
             logger.info("Scheduled to download at " + downloadTrigger.getNextFireTime());
@@ -85,7 +85,7 @@ public class Global
             JobDetail download = JobBuilder.newJob(FileProcessingThread.class).withIdentity("processor", "fileProcess").build();
             Trigger downloadTrigger = TriggerBuilder.newTrigger()
                     .withIdentity("processorTrigger", "fileProcess")
-                    .withSchedule(CronScheduleBuilder.cronSchedule("10 * * ? * MON-FRI *"))
+                    .withSchedule(CronScheduleBuilder.cronSchedule("0 * * ? * MON-FRI *"))
                     .build();
             scheduler.scheduleJob(download, downloadTrigger);
             logger.info("Scheduled to process files at " + downloadTrigger.getNextFireTime());

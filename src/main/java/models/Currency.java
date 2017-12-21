@@ -3,6 +3,7 @@ package models;
 import common.models.AbstractModel;
 import models.xml.XMLCurrency;
 
+import java.util.Comparator;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -37,7 +38,7 @@ public class Currency extends AbstractModel
     public CurrencyPrice getCurrentPrice()
     {
         if(avgPrices.size() > 0)
-            return avgPrices.stream().sorted((o1, o2) -> o1.getDate().compareTo(o2.getDate())).findFirst().get();
+            return avgPrices.stream().sorted(Comparator.comparing(CurrencyPrice::getDate)).findFirst().get();
         return null;
     }
 

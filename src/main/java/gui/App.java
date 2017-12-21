@@ -1,32 +1,18 @@
 package gui;
 
-import common.utils.PolyTrendLine;
-import common.utils.TrendLine;
 import main.Global;
 import models.Currency;
 import models.CurrencyPrice;
 import models.gui.CurrencyTableModel;
-import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartPanel;
-import org.jfree.chart.ChartUtilities;
 import org.jfree.chart.JFreeChart;
-import org.jfree.chart.labels.StandardXYToolTipGenerator;
-import org.jfree.chart.plot.XYPlot;
-import org.jfree.chart.renderer.xy.StandardXYBarPainter;
-import org.jfree.chart.renderer.xy.XYBarRenderer;
-import org.jfree.data.time.Day;
-import org.jfree.data.time.TimeSeries;
-import org.jfree.data.time.TimeSeriesCollection;
-import org.jfree.data.xy.IntervalXYDataset;
-import org.jfree.data.xy.XYDataset;
 import org.joda.time.DateTime;
+import services.CurrencyChartService;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableCellRenderer;
 import java.util.*;
 import java.awt.*;
-import java.text.DecimalFormat;
-import java.text.SimpleDateFormat;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -50,10 +36,13 @@ public class App
 
     private Map<String, ChartPanel> chartPanelsMap = new HashMap<>();                                                   // K: currencyName V: chart panel created for that currency
 
+    private static final CurrencyChartService chartService = new CurrencyChartService();
+
     /**
      * Constructor responsible for creating whole FrontEnd
      */
-    public App() {
+    public App()
+    {
         JFrame frame = new JFrame("Extreme Robotics App");
         Image image = new ImageIcon("files/res/icon.jpg").getImage();
         frame.setIconImage(image);
@@ -71,6 +60,7 @@ public class App
      * Adds data to currencyTable and adjusts column sizes
      */
     public void connectDataSources() {
+
         currencyTable.setModel(new CurrencyTableModel(Global.currencyService.getAllCurrencies()));
         currencyTable.getColumnModel().getColumn(0).setMinWidth(50);
         currencyTable.getColumnModel().getColumn(0).setMaxWidth(350);
@@ -82,79 +72,15 @@ public class App
     }
 
     /**
-     * Creates a chart.
-     *
-     * @return a chart.
-     */
-    private static JFreeChart createChart(String title, List<CurrencyPrice> prices) {
-
-        JFreeChart chart = ChartFactory.createTimeSeriesChart(
-                title,
-                "Date",
-                "Price",
-                createTrendLine(prices),
-                true,
-                true,
-                false
-        );
-        XYPlot plot = (XYPlot) chart.getPlot();
-
-        plot.setDataset(1, createPriceDataSet(prices));
-        plot.mapDatasetToRangeAxis(1, 0);
-        XYBarRenderer renderer2 = new XYBarRenderer(0.20);
-        renderer2.setBaseToolTipGenerator(
-                new StandardXYToolTipGenerator(
-                        StandardXYToolTipGenerator.DEFAULT_TOOL_TIP_FORMAT,
-                        new SimpleDateFormat("d-MMM-yyyy"),
-                        new DecimalFormat("0.00")));
-        plot.setRenderer(1, renderer2);
-        ChartUtilities.applyCurrentTheme(chart);
-        renderer2.setBarPainter(new StandardXYBarPainter());
-        renderer2.setShadowVisible(false);
-        return chart;
-
-    }
-
-    private static JFreeChart createChart(String title, Set<CurrencyPrice> prices) {
-        return createChart(title, new ArrayList<>(prices));
-    }
-
-    /**
-     * Creates a trend line for provided data.
-     *
-     * @return Trend line represented as XYDataSet
-     */
-    private static XYDataset createTrendLine(List<CurrencyPrice> prices) {
-        TimeSeries series1 = new TimeSeries("Trend Line");
-        TrendLine t = new PolyTrendLine(2);
-        t.setValues(prices.stream().mapToDouble(CurrencyPrice::getPrice).toArray(), prices.stream().map(CurrencyPrice::getDate).mapToDouble(DateTime::getMillis).toArray());
-
-        prices.forEach(price -> series1.add(new Day(price.getDate().getDayOfMonth(), price.getDate().getMonthOfYear(), price.getDate().getYear()), t.predict(price.getDate().getMillis())));
-        return new TimeSeriesCollection(series1);
-
-    }
-
-    /**
-     * Creates bar DataSet from archived currency prices.
-     *
-     * @return Bar DataSet used by JFreeChart framework
-     */
-    private static IntervalXYDataset createPriceDataSet(List<CurrencyPrice> prices) {
-
-        TimeSeries series1 = new TimeSeries("Price");
-
-        prices.forEach(price -> series1.add(new Day(price.getDate().getDayOfMonth(), price.getDate().getMonthOfYear(), price.getDate().getYear()), price.getPrice()));
-        return new TimeSeriesCollection(series1);
-
-    }
-
-    /**
      * Adds new chart panel to JScrollPane
+     *
      * @param chart chart, that this chart panel will contain
      */
-    private void addChartPanel(JFreeChart chart) {
+    private void addChartPanel(JFreeChart chart, JFreeChart predictionChart) {
         ChartPanel newChartPanel = new ChartPanel(chart, true, true, true, false, true);
+        ChartPanel predictionChartPanel = new ChartPanel(predictionChart);
         newChartPanel.setToolTipText("Select area to zoom in");
+        predictionChartPanel.setToolTipText("Select area to zoom in");
         JPanel toolBar1 = new JPanel();
         toolBar1.setLayout(new BorderLayout(0, 0));
         JButton closeButton = new JButton();
@@ -165,15 +91,20 @@ public class App
         closeButton.setToolTipText("Remove graph");
         closeButton.setMargin(new Insets(0, 0, 0, 0));
         closeButton.setFont(new Font("Arial", Font.BOLD, 16));
-        closeButton.addActionListener(e -> removeChartPanel(newChartPanel));
+        closeButton.addActionListener(e -> {
+            removeChartPanel(newChartPanel);
+            removeChartPanel(predictionChartPanel);
+        });
         toolBar1.add(closeButton, BorderLayout.EAST);
         toolBar1.setOpaque(false);
         newChartPanel.setLayout(new BorderLayout(0, 0));
         newChartPanel.add(toolBar1, BorderLayout.NORTH);
         chartPanel.add(newChartPanel);
+        chartPanel.add(predictionChartPanel);
         chartPanel.revalidate();
         chartPanel.repaint();
         chartPanelsMap.put(chart.getTitle().getText(), newChartPanel);
+        chartPanelsMap.put(predictionChart.getTitle().getText(), predictionChartPanel);
     }
 
     /**
@@ -195,9 +126,8 @@ public class App
     /**
      * Adds action listeners to form elements.
      */
-    private void createActionListeners()
-    {
-        helpButton.addActionListener(e -> {
+    private void createActionListeners() {
+        helpButton.addActionListener(e -> {                                                                             // Shows help window on click.
             String helpMessage = "- Zoom in: To zoom graph, select with mouse area you wish to zoom, starting from top left corner.\n" +
                     "- Zoom out: To unzoom, swipe line with mouse, over graph, starting from bottom left corner, to bottom right corner.\n" +
                     "- Add graph: New currency graph is added by using Add graph button, after selecting desired currency on list.\n" +
@@ -205,55 +135,84 @@ public class App
                     "- Graph range: Changed, by selecting one of buttons above graphs with desired range.";
             JOptionPane.showMessageDialog(new JFrame("Help"), helpMessage, "HELP", JOptionPane.QUESTION_MESSAGE);
         });
-        buttonAdd.addActionListener(e -> {
+        buttonAdd.addActionListener(e -> {                                                                              // Creates new graph on click. Currency must be selected from list
             try {
                 Currency selectedCurrency = ((CurrencyTableModel) currencyTable.getModel()).getObjectAt(currencyTable.getSelectedRow());
-                addChartPanel(createChart(selectedCurrency.getName(), selectedCurrency.getAvgPrices()));
+                if (chartPanelsMap.get(selectedCurrency.getName()) == null)
+                    addChartPanel(chartService.createChart(selectedCurrency.getName(), selectedCurrency.getAvgPrices()), chartService.createPredictionChart(selectedCurrency.getName(), selectedCurrency.getAvgPrices(), 30));
+                else
+                    JOptionPane.showMessageDialog(new JFrame("Error"), "Graph already created for that currency.", "ERROR", JOptionPane.ERROR_MESSAGE);
             } catch (ArrayIndexOutOfBoundsException ex) {
                 JOptionPane.showMessageDialog(new JFrame("Error"), "Please choose a currency for which you wish to create graph.", "ERROR", JOptionPane.ERROR_MESSAGE);
             }
         });
-        year5Button.addActionListener(e -> {
+        year5Button.addActionListener(e -> {                                                                            // On click, sets scope of each graph to 5 years
             chartPanelsMap.forEach((k, v) -> {
-                Currency currency = ((CurrencyTableModel) currencyTable.getModel()).getCurrencyByName(k);
-                List<CurrencyPrice> filteredPrices = currency.getAvgPrices().stream().filter(cp -> cp.getDate().plusYears(5).getMillis() >= DateTime.now().getMillis()).collect(Collectors.toList());
-                v.setChart(createChart(k, filteredPrices));
+                String processedKey = k.replace(" - Prediction", "");
+                Currency currency = ((CurrencyTableModel) currencyTable.getModel()).getCurrencyByName(processedKey);
+                if (k.contains("Prediction"))
+                    v.setChart(chartService.createPredictionChart(processedKey, currency.getAvgPrices(), 30));
+                else {
+                    List<CurrencyPrice> filteredPrices = currency.getAvgPrices().stream().filter(cp -> cp.getDate().plusYears(5).getMillis() >= DateTime.now().getMillis()).collect(Collectors.toList());
+                    v.setChart(chartService.createChart(k, filteredPrices));
+                }
+
             });
             chartPanel.revalidate();
             chartPanel.repaint();
         });
-        yearButton.addActionListener(e -> {
+        yearButton.addActionListener(e -> {                                                                             // On click, sets scope of each graph to one year
             chartPanelsMap.forEach((k, v) -> {
-                Currency currency = ((CurrencyTableModel) currencyTable.getModel()).getCurrencyByName(k);
-                List<CurrencyPrice> filteredPrices = currency.getAvgPrices().stream().filter(cp -> cp.getDate().plusYears(1).getMillis() >= DateTime.now().getMillis()).collect(Collectors.toList());
-                v.setChart(createChart(k, filteredPrices));
+                String processedKey = k.replace(" - Prediction", "");
+                Currency currency = ((CurrencyTableModel) currencyTable.getModel()).getCurrencyByName(processedKey);
+                if (k.contains("Prediction"))
+                    v.setChart(chartService.createPredictionChart(processedKey, currency.getAvgPrices(), 30));
+                else {
+                    List<CurrencyPrice> filteredPrices = currency.getAvgPrices().stream().filter(cp -> cp.getDate().plusYears(1).getMillis() >= DateTime.now().getMillis()).collect(Collectors.toList());
+                    v.setChart(chartService.createChart(k, filteredPrices));
+                }
             });
             chartPanel.revalidate();
             chartPanel.repaint();
         });
-        month6button.addActionListener(e -> {
+        month6button.addActionListener(e -> {                                                                           // On click, sets scope of each graph to six month
             chartPanelsMap.forEach((k, v) -> {
-                Currency currency = ((CurrencyTableModel) currencyTable.getModel()).getCurrencyByName(k);
-                List<CurrencyPrice> filteredPrices = currency.getAvgPrices().stream().filter(cp -> cp.getDate().plusMonths(6).getMillis() >= DateTime.now().getMillis()).collect(Collectors.toList());
-                v.setChart(createChart(k, filteredPrices));
+                String processedKey = k.replace(" - Prediction", "");
+                Currency currency = ((CurrencyTableModel) currencyTable.getModel()).getCurrencyByName(processedKey);
+                if (k.contains("Prediction"))
+                    v.setChart(chartService.createPredictionChart(processedKey, currency.getAvgPrices(), 30));
+                else {
+                    List<CurrencyPrice> filteredPrices = currency.getAvgPrices().stream().filter(cp -> cp.getDate().plusMonths(6).getMillis() >= DateTime.now().getMillis()).collect(Collectors.toList());
+                    v.setChart(chartService.createChart(k, filteredPrices));
+                }
             });
             chartPanel.revalidate();
             chartPanel.repaint();
         });
-        monthButton.addActionListener(e -> {
+        monthButton.addActionListener(e -> {                                                                            // On click, sets scope of each graph to one month
             chartPanelsMap.forEach((k, v) -> {
-                Currency currency = ((CurrencyTableModel) currencyTable.getModel()).getCurrencyByName(k);
-                List<CurrencyPrice> filteredPrices = currency.getAvgPrices().stream().filter(cp -> cp.getDate().plusMonths(1).getMillis() >= DateTime.now().getMillis()).collect(Collectors.toList());
-                v.setChart(createChart(k, filteredPrices));
+                String processedKey = k.replace(" - Prediction", "");
+                Currency currency = ((CurrencyTableModel) currencyTable.getModel()).getCurrencyByName(processedKey);
+                if (k.contains("Prediction"))
+                    v.setChart(chartService.createPredictionChart(processedKey, currency.getAvgPrices(), 30));
+                else {
+                    List<CurrencyPrice> filteredPrices = currency.getAvgPrices().stream().filter(cp -> cp.getDate().plusMonths(1).getMillis() >= DateTime.now().getMillis()).collect(Collectors.toList());
+                    v.setChart(chartService.createChart(k, filteredPrices));
+                }
             });
             chartPanel.revalidate();
             chartPanel.repaint();
         });
-        weekButton.addActionListener(e -> {
+        weekButton.addActionListener(e -> {                                                                             // On click, sets scope of each graph to one week
             chartPanelsMap.forEach((k, v) -> {
-                Currency currency = ((CurrencyTableModel) currencyTable.getModel()).getCurrencyByName(k);
+                String processedKey = k.replace(" - Prediction", "");
+                Currency currency = ((CurrencyTableModel) currencyTable.getModel()).getCurrencyByName(processedKey);
                 List<CurrencyPrice> filteredPrices = currency.getAvgPrices().stream().filter(cp -> cp.getDate().plusWeeks(1).getMillis() >= DateTime.now().getMillis()).collect(Collectors.toList());
-                v.setChart(createChart(k, filteredPrices));
+                if (k.contains("Prediction"))
+                    v.setChart(chartService.createPredictionChart(processedKey, new HashSet<>(filteredPrices), 7));
+                else {
+                    v.setChart(chartService.createChart(k, filteredPrices));
+                }
             });
             chartPanel.revalidate();
             chartPanel.repaint();
